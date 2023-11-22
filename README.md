@@ -1,5 +1,6 @@
 # WARfactors-KBO2023
-
+<p>본 프로젝트는 2023년 2학기 한국외국어대학교 국제금융학과 파이낸스어낼리틱스 수업의 프로젝트입니다.</p>
+<p>참여 인원: 고우혁, 김재영, 양태승, 이윤우</p>
 <h2>1. 프로젝트 개요</h2>
 <p>본 프로젝트에서는 WAR(Wins Above Replacement, 대체 수준 대비 승리 기여도)에 영향을 미치는 야구 통계량을 찾고, 이에 대한 함의를 도출하고자 합니다.</p>
 <h2>2. 사용 통계 모형과 R 버전</h2>
@@ -22,7 +23,7 @@ library(lmtest)</code></pre>
 <h2>4. 명명법과 버전 관리</h2>
 <p>본 프로젝트에서는 변수, 데이터셋, 모형을 다음과 같이 명명합니다.</p>
 <h3>1) 변수</h3>
-<p>변수의 이름은 다음 예외를 제외하고 snake 표기법을 사용합니다. 예외 처리된 변수는 폴어 쓰면 길이가 과도하게 길어져 snake 표기법을 변칙 적용하였습니다.<br>
+<p>변수의 이름은 다음 예외를 제외하고 snake 표기법을 사용합니다. 예외 처리된 변수는 폴어 쓰면 길이가 과도하게 길어져 snake 표기법을 변칙 적용하였습니다. 변수 이름에 대한 설명은 variables.txt를 참조 바랍니다.<br>
 <pre><code>#snake 표기법의 예시
 at_bats</code></pre>
 예외: ops, w_oba, w_rcplus, war, spd, hr_ratio, bb_ratio, k_ratio, bbk_ratio, isop, isod, babip, spd, psn, w_rc, w_rc_27o, w_raa, w_oba_pf, w_rc_pf, w_rc_27o_pf, w_raa_pf<br>
