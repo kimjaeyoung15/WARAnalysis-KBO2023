@@ -7,7 +7,7 @@
 <p>본 프로젝트에서는 다중선형회귀모형을 사용하며, 이외 모형은 사용하지 않습니다. R은 4.3.2를 사용합니다.<br>
 <pre><code>lm()</code></pre>
 <h2>3. 사용 패키지</h2>
-본 프로젝트에서 사용하는 패키지는 car, ggplot2, GGally, lmtest를 입니다.<br>
+본 프로젝트에서 사용하는 패키지는 car, ggplot2, GGally, lmtest입니다.<br>
 설치 명령어:<br>
 <pre><code>install.packages('car')
 install.packages('ggplot2')
