@@ -20,7 +20,12 @@ library(ggplot2)
 library(GGally)
 library(lmtest)</code></pre>
 </p>
-<h2>4. 명명법과 버전 관리</h2>
+<h2>4. 자료의 출처</h2>
+<p>본 프로젝트에서 사용하는 자료는 STATIZ의 기록실의 기본 및 확장 통계 자료이며, 선수 50명의 기록을 2023년 전 시즌 자료를 wRC+로 정렬하였습니다.<br>
+자료 링크:<br> 
+기본 통계 - http://www.statiz.co.kr/stat.php?mid=stat&re=0&ys=2023&ye=2023&se=0&te=&tm=&ty=0&qu=auto&po=0&as=&ae=&hi=&un=&pl=&da=1&o1=WRCPLUS&o2=TPA&de=1&lr=0&tr=&cv=&ml=1&sn=30&si=&cn=<br>
+확장 통계 - http://www.statiz.co.kr/stat.php?opt=0&sopt=0&re=0&ys=2023&ye=2023&se=0&te=&tm=&ty=0&qu=auto&po=0&as=&ae=&hi=&un=&pl=&da=2&o1=WRCPLUS&de=1&o2=WAR_ALL&lr=0&tr=&cv=&ml=1&sn=30&si=&cn=</p>
+<h2>5. 명명법과 버전 관리</h2>
 <p>본 프로젝트에서는 변수, 데이터셋, 모형을 다음과 같이 명명합니다.</p>
 <h3>1) 변수</h3>
 <p>변수의 이름은 다음 예외를 제외하고 snake 표기법을 사용합니다. 예외 처리된 변수는 폴어 쓰면 길이가 과도하게 길어져 snake 표기법을 변칙 적용하였습니다. 변수 이름에 대한 설명은 variables.txt를 참조 바랍니다.<br>
