@@ -1,0 +1,34 @@
+position: 포지션
+game: 경기수
+plate: 타석
+at_bats: 타수
+runs_scored: 득점
+hits: 안타
+doubles: 2루타
+triples: 3루타
+homerun: 홈런
+base_hits: 루타
+runs_batted_in: 타점
+stolen_bases: 도루
+caught_stealing: 도루실패
+base_on_balls: 볼넷
+hit_by_pitch: 사구
+intentional_walks: 고의사구
+strikeouts: 삼진
+ground_into_double_plays: 병살타
+sacrifice_hits: 희생타
+sacrifice_flies: 희생플라이
+batting_average: 타율
+on_base_percentage: 출루율
+slugging_percentage: 장타율
+hr_ratio: HR%
+bb_ratio: BB%
+k_ratio: K%
+bbk_ratio: BB/K
+w_rcplus:wRC+
+w_rc: wRC
+w_rc_27o: wRC/27
+w_raa: wRAA
+w_oba: wOBA
+_pf: 파크팩터 조정
+ln_: 자연로그 변환
