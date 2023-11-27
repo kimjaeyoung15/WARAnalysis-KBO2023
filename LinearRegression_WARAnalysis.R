@@ -66,7 +66,7 @@ saveRDS(LM_Cleaned_WARAnalysis_v0.1.1, file='C:\\Users\\Finance_Analytics\\WARAn
 #significant, and residual plot's variance is smaller than LM_Prototype_WARAnalysis_v0.1.5
 
 #cleaned dataset 0.2
-
+setwd('C:\\Users\\esteb\\Documents\\GitHub\\WARAnalysis-KBO2023\\WARAnalysis_Cleaned_v0.2')
 #model 0.2.1 series(contain all variables)
 Dataset_Cleaned_WARAnalysis_v0.2 <- read.csv('Dataset_Cleaned_WARAnalysis_v0.2.csv')
 LM_Cleaned_WARAnalysis_v0.2.1 <- lm(war~hits_game+doubles_game+triples_game+homeruns_game+rbi_game
@@ -86,6 +86,9 @@ step(LM_Cleaned_WARAnalysis_v0.2.1l, direction = 'both')
 summary(lm(formula = ln_war ~ ln_hits_game + ln_basehits_game + ln_bb_game, 
            data = Dataset_Cleaned_WARAnalysis_v0.2))
 
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.1,file='LM_Cleaned_WARAnalysis_v0.2.1.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.1l,file='LM_Cleaned_WARAnalysis_v0.2.1l.rds')
+
 #model 0.2.2 series(selected variables)
 
 #model 0.2.2a - variables are selected by step method
@@ -100,9 +103,12 @@ plot(LM_Cleaned_WARAnalysis_v0.2.2a, which=c(1:6))
 plot(LM_Cleaned_WARAnalysis_v0.2.2la, which=c(1:6))
 shapiro.test(LM_Cleaned_WARAnalysis_v0.2.2a$residuals)
 
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.2a,file='LM_Cleaned_WARAnalysis_v0.2.2a.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.2la,file='LM_Cleaned_WARAnalysis_v0.2.2la.rds')
 
 #model 0.2.2b
-LM_Cleaned_WARAnalysis_v0.2.3 <- lm(war~., data=Dataset_Cleaned_WARAnalysis_v0.2)
+par(mfrow=c(2,3))
+LM_Cleaned_WARAnalysis_v0.2.3 <- lm(war~., data=Dataset_Cleaned_WARAnalysis_v0.2) #don't use; worthless
 step(LM_Cleaned_WARAnalysis_v0.2.3, direction = 'both')
 LM_Cleaned_WARAnalysis_v0.2.3a <- lm(formula = war ~ ln_hits_game + ln_triples_game + ln_homeruns_game + ln_basehits_game
                                      + ln_bb_game+ln_stolen_game+ln_caught_game+ln_hp_game, data = Dataset_Cleaned_WARAnalysis_v0.2)
@@ -118,5 +124,44 @@ LM_Cleaned_WARAnalysis_v0.2.3lb <- lm(formula = ln_war ~ hits_game + homeruns_ga
                                         stolen_game + bb_game, data = Dataset_Cleaned_WARAnalysis_v0.2)
 summary(LM_Cleaned_WARAnalysis_v0.2.3lb)
 plot(LM_Cleaned_WARAnalysis_v0.2.3lb, which=c(1:6))
-write.csv(Dataset_Cleaned_WARAnalysis_v0.2, file='C:\\Users\\esteb\\Documents\\GitHub\\WARAnalysis-KBO2023\\WARAnalysis_Cleaned_v0.2\\Dataset_Cleaned_WARAnalysis_v0.2.csv')
-?write.csv
+shapiro.test(LM_Cleaned_WARAnalysis_v0.2.3lb$residuals)
+
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.3a,file='LM_Cleaned_WARAnalysis_v0.2.3a.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.3la,file='LM_Cleaned_WARAnalysis_v0.2.3la.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.2.3lb,file='LM_Cleaned_WARAnalysis_v0.2.3lb.rds')
+
+#cleaned dataset 0.3
+setwd('C:\\Users\\esteb\\Documents\\GitHub\\WARAnalysis-KBO2023\\WARAnalysis_Cleaned_v0.3')
+Dataset_Cleaned_WARAnalysis_v0.3 <- read.csv('Dataset_Cleaned_WARAnalysis_v0.3.csv')
+
+#model 0.3.1
+LM_Cleaned_WARAnalysis_v0.3.1 <- lm(war~hits_plate+doubles_plate+triples_plate+homeruns_plate
+                                    +stolen_plate+caught_plate+bb_plate+hp_plate+strikeouts_plate, data=Dataset_Cleaned_WARAnalysis_v0.3)
+LM_Cleaned_WARAnalysis_v0.3.1l <- lm(ln_war~hits_plate+doubles_plate+triples_plate+homeruns_plate
+                                    +stolen_plate+caught_plate+bb_plate+hp_plate+strikeouts_plate, data=Dataset_Cleaned_WARAnalysis_v0.3)
+summary(LM_Cleaned_WARAnalysis_v0.3.1)
+step(LM_Cleaned_WARAnalysis_v0.3.1, direction = 'both')
+par(mfrow=c(2,3))
+plot(LM_Cleaned_WARAnalysis_v0.3.1, which=c(1:6))
+
+saveRDS(LM_Cleaned_WARAnalysis_v0.3.1,file='LM_Cleaned_WARAnalysis_v0.3.1.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.3.1l,file='LM_Cleaned_WARAnalysis_v0.3.1l.rds')
+
+#model 0.3.2
+LM_Cleaned_WARAnalysis_v0.3.2 <- lm(war~hits_plate+homeruns_plate
+                                    +stolen_plate+bb_plate, data=Dataset_Cleaned_WARAnalysis_v0.3)
+LM_Cleaned_WARAnalysis_v0.3.2l <- lm(ln_war~hits_plate+homeruns_plate
+                                     +stolen_plate+bb_plate, data=Dataset_Cleaned_WARAnalysis_v0.3) #significant, moderate variance of residuals
+summary(LM_Cleaned_WARAnalysis_v0.3.2)
+summary(LM_Cleaned_WARAnalysis_v0.3.2l)
+plot(LM_Cleaned_WARAnalysis_v0.3.2, which=c(1:6))
+plot(LM_Cleaned_WARAnalysis_v0.3.2l, which=c(1:6))
+shapiro.test(LM_Cleaned_WARAnalysis_v0.3.2l$residuals)
+
+mockset <- Dataset_Cleaned_WARAnalysis_v0.3[-12,]
+mockmodel <- LM_Cleaned_WARAnalysis_v0.3.2l <- lm(ln_war~hits_plate+homeruns_plate
+                                                  +stolen_plate+bb_plate, data=mockset)
+plot(mockmodel, which = c(1:6))
+
+saveRDS(LM_Cleaned_WARAnalysis_v0.3.2,file='LM_Cleaned_WARAnalysis_v0.3.2.rds')
+saveRDS(LM_Cleaned_WARAnalysis_v0.3.2l,file='LM_Cleaned_WARAnalysis_v0.3.2l.rds')
