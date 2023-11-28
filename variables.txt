@@ -4,6 +4,7 @@ plate: 타석
 at_bats: 타수
 runs_scored: 득점
 hits: 안타
+singles: 1루타
 doubles: 2루타
 triples: 3루타
 homerun: 홈런
@@ -11,8 +12,8 @@ base_hits: 루타
 runs_batted_in: 타점
 stolen_bases: 도루
 caught_stealing: 도루실패
-base_on_balls: 볼넷
-hit_by_pitch: 사구
+base_on_balls(bb)*: 볼넷
+hit_by_pitch(hp)*: 사구
 intentional_walks: 고의사구
 strikeouts: 삼진
 ground_into_double_plays: 병살타
@@ -32,3 +33,6 @@ w_raa: wRAA
 w_oba: wOBA
 _pf: 파크팩터 조정
 ln_: 자연로그 변환
+_plate: 타석 대비 타격지표 등. 예) singles_plate - 타석 대비 1루타 비율(1루타/타석)
+
+*Dataset_Cleaned_WARAnalysis_v0.3.csv에서는 글자수 문제로 bb와 hp로 축약됨.
