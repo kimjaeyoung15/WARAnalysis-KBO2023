@@ -43,8 +43,8 @@ Dataset_WARAnalysis_v0.1.csv
 Dataset_Cleaned_WARAnalysis_v0.1.csv</code></pre>
 </p>
 <h3>3) 모형</h3>
-<p>전체 데이터셋에 대한 모형은 LM_Prototype_WARAnalysis_vX.Y.Z로, 전처리된 데이터셋에 대한 모형은  LM_Cleared_WARAnalysis_vX.Y.Z로 명명합니다. 여기서 X와 Y는 데이터셋의 버전을, Z는 모형의 버전을 나타냅니다. Z는 1 이상의 자연수입니다. 모형의 버전은 데이터셋의 버전에 종속됩니다.<br>
+<p>전체 데이터셋에 대한 모형은 LM_Prototype_WARAnalysis_vX.Y.Z로, 전처리된 데이터셋에 대한 모형은  LM_Cleared_WARAnalysis_vX.Y.Z로 명명합니다. 여기서 X와 Y는 데이터셋의 버전을, Z는 모형의 버전을 나타냅니다. Z는 1 이상의 자연수입니다. 모형의 버전은 데이터셋의 버전에 종속됩니다. 종속변수를 자연로그 변환한 모형은 버전 숫자 뒤에 l(라틴 알파벳 소문자 l)이 붙으며, 마이너 체인지 버전은 맨 뒤(Z와 l 뒤)에 알파벳 소문자를 붙입니다.<br>
 <pre><code>#모형 명명 예시
 LM_Prototype_WARAnalysis_v0.1.1 <- lm()
-LM_Cleaned_WARAnalysis_v0.1.1 <- lm()</code></pre>
+LM_Cleaned_WARAnalysis_v0.1.2la <- lm()</code></pre>
 </p>
